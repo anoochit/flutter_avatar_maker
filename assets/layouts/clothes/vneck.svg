@@ -1,0 +1,5 @@
+<svg id="clothes" width="360px" height="360px" viewBox="0 0 360 360">
+    <g id="c_vneck">
+        <path class="tinted" fill="#545454" d="M304 360l0 -15c0,-44 -34,-81 -78,-85l-46 47 -46 -47c-44,4 -78,41 -78,85l0 15 248 0z"/>
+    </g>
+</svg>

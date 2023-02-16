@@ -1,0 +1,7 @@
+<svg id="mouths" width="360px" height="360px" viewBox="0 0 360 360">
+    <g id="m_concerned">
+        <path fill="#000000" d="M180 197l0 0c13,0 24,10 24,23l0 1 -48 0 0 -1c0,-13 11,-23 24,-23z"/>
+        <path fill="#FEFEFE" d="M180 197l0 0c6,0 12,2 16,6l-32 0c4,-4 10,-6 16,-6z"/>
+        <path fill="#FF4F6D" d="M173 211c4,0 5,1 7,3 2,-2 3,-3 7,-3 5,0 11,5 12,10l-38 0c1,-5 7,-10 12,-10z"/>
+    </g>
+</svg>
