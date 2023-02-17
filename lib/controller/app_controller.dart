@@ -20,6 +20,8 @@ class AppController extends GetxController {
   RxInt facialhairIndex = 1.obs;
   // cloth
   RxInt clothIndex = 2.obs;
+  // glasses
+  RxInt glassesIndex = 0.obs;
 
   @override
   void onInit() {
@@ -67,6 +69,11 @@ class AppController extends GetxController {
     update();
   }
 
+  setGlassesIndex(int index) {
+    glassesIndex.value = index;
+    update();
+  }
+
   void updateOption({required String label, required int index}) {
     switch (label) {
       case "skin":
@@ -90,6 +97,9 @@ class AppController extends GetxController {
       case "cloth":
         setClothIndex(index);
         break;
+      case "glasses":
+        setGlassesIndex(index);
+        break;
     }
   }
 
@@ -112,5 +122,7 @@ class AppController extends GetxController {
     setFacialhairIndex(facialhairIndex);
     final skinIndex = Random().nextInt(layoutSkins.length);
     setSkinIndex(skinIndex);
+    final glassesIndex = Random().nextInt(layoutGlasses.length);
+    setGlassesIndex(glassesIndex);
   }
 }

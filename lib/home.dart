@@ -82,6 +82,13 @@ class HomePage extends StatelessWidget {
                     height: scWidth,
                     width: scWidth,
                   ),
+
+                  // glasses
+                  AvatarWidget(
+                    image: layoutGlasses[controller.glassesIndex.value],
+                    height: scWidth,
+                    width: scWidth,
+                  ),
                 ],
               ),
               // space
@@ -109,6 +116,8 @@ class HomePage extends StatelessWidget {
                         options: optionFacialhair, label: 'facialhair'),
                     // cloth
                     OptionMenuWidget(options: optionClothes, label: 'cloth'),
+                    // glasses
+                    OptionMenuWidget(options: optionGlasses, label: 'glasses'),
                   ],
                 ),
               ),

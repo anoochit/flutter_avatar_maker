@@ -90,6 +90,16 @@ const layoutFacialhair = [
   "assets/layouts/facialhair/magnum.svg",
 ];
 
+const layoutGlasses = [
+  "assets/layouts/glasses/none.svg",
+  "assets/layouts/glasses/fancy.svg",
+  "assets/layouts/glasses/fancy2.svg",
+  "assets/layouts/glasses/harry.svg",
+  "assets/layouts/glasses/nerd.svg",
+  "assets/layouts/glasses/old.svg",
+  "assets/layouts/glasses/rambo.svg",
+];
+
 // options
 const optionClothes = [
   "assets/options/clothes/none.svg",
@@ -182,6 +192,16 @@ const optionFacialhair = [
   "assets/options/facialhair/magnum.svg",
 ];
 
+const optionGlasses = [
+  "assets/options/glasses/none.svg",
+  "assets/options/glasses/fancy.svg",
+  "assets/options/glasses/fancy2.svg",
+  "assets/options/glasses/harry.svg",
+  "assets/options/glasses/nerd.svg",
+  "assets/options/glasses/old.svg",
+  "assets/options/glasses/rambo.svg",
+];
+
 // category menu
 class CategoryMenu {
   String image;
@@ -200,4 +220,5 @@ final listCategory = [
   CategoryMenu(image: optionMouths[1], index: 5),
   CategoryMenu(image: optionFacialhair[1], index: 6),
   CategoryMenu(image: optionClothes[1], index: 7),
+  CategoryMenu(image: optionGlasses[1], index: 8),
 ];
