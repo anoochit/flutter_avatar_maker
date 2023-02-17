@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_avatar_maker/binging/root_binging.dart';
 import 'package:get/get.dart';
 
-import 'home.dart';
+import 'pages/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
