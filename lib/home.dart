@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_avatar_maker/const.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+import 'widgets/avatar.dart';
 import 'widgets/category_menu.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,33 +14,62 @@ class HomePage extends StatelessWidget {
         title: const Text("Avatar Maker"),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          // space
+          const Spacer(),
           // avatar image
           Stack(
             children: [
               // skin
-              SvgPicture.asset("assets/layouts/skins/white.svg"),
+              AvatarWidget(
+                image: layoutSkins[1],
+                height: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
+              ),
 
               // hair
-              SvgPicture.asset("assets/layouts/hair/hairbun.svg"),
+              AvatarWidget(
+                image: layoutHair[1],
+                height: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
+              ),
 
               // eyebrow
-              SvgPicture.asset("assets/layouts/eyebrows/default.svg"),
+              AvatarWidget(
+                image: layoutEyebrows[1],
+                height: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
+              ),
 
               // eye
-              SvgPicture.asset("assets/layouts/eyes/cry.svg"),
+              AvatarWidget(
+                image: layoutEye[1],
+                height: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
+              ),
 
               // mouth
-              SvgPicture.asset("assets/layouts/mouths/sad.svg"),
+              AvatarWidget(
+                image: layoutMouths[1],
+                height: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
+              ),
 
               // cloth
-              SvgPicture.asset("assets/layouts/clothes/hoodie.svg"),
+              AvatarWidget(
+                image: layoutClothes[1],
+                height: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
+              ),
             ],
           ),
-
+          // space
+          const Spacer(),
           // category
-          const CategoryMenu(),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+            child: CategoryMenu(),
+          ),
         ],
       ),
     );
