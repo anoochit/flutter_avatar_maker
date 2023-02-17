@@ -18,6 +18,14 @@ class HomePage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: const Text("Avatar Maker"),
+            actions: [
+              IconButton(
+                onPressed: () {
+                  controller.randomAvatar();
+                },
+                icon: Icon(Icons.refresh),
+              )
+            ],
           ),
           body: Column(
             children: [

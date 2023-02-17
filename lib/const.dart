@@ -51,7 +51,14 @@ const layoutHair = [
   "assets/layouts/hair/miawallace.svg",
   "assets/layouts/hair/nottoolong.svg",
   "assets/layouts/hair/shorthaircurly.svg",
-  "assets/layouts/hair/shorthairdreads.svg"
+  "assets/layouts/hair/shorthairdreads.svg",
+  "assets/layouts/hair/shorthairdreads2.svg",
+  "assets/layouts/hair/shorthairflat.svg",
+  "assets/layouts/hair/shorthairfrizzle.svg",
+  "assets/layouts/hair/shorthairround.svg",
+  "assets/layouts/hair/shorthairshaggy.svg",
+  "assets/layouts/hair/shorthairsides.svg",
+  "assets/layouts/hair/shorthairwaved.svg",
 ];
 
 const layoutMouths = [
@@ -128,7 +135,14 @@ const optionHair = [
   "assets/options/hair/miawallace.svg",
   "assets/options/hair/nottoolong.svg",
   "assets/options/hair/shorthaircurly.svg",
-  "assets/options/hair/shorthairdreads.svg"
+  "assets/options/hair/shorthairdreads.svg",
+  "assets/options/hair/shorthairdreads2.svg",
+  "assets/options/hair/shorthairflat.svg",
+  "assets/options/hair/shorthairfrizzle.svg",
+  "assets/options/hair/shorthairround.svg",
+  "assets/options/hair/shorthairshaggy.svg",
+  "assets/options/hair/shorthairsides.svg",
+  "assets/options/hair/shorthairwaved.svg",
 ];
 
 const optionMouths = [

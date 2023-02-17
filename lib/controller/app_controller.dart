@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:flutter_avatar_maker/const.dart';
 import 'package:get/get.dart';
 
 class AppController extends GetxController {
@@ -15,6 +18,12 @@ class AppController extends GetxController {
   RxInt mouthIndex = 12.obs;
   // cloth
   RxInt clothIndex = 2.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    randomAvatar();
+  }
 
   setCategoryIndex(int index) {
     categoryIndex.value = index;
@@ -72,5 +81,24 @@ class AppController extends GetxController {
         setClothIndex(index);
         break;
     }
+  }
+
+  void randomAvatar() {
+    int clothIndex = Random().nextInt(layoutClothes.length);
+    if (clothIndex == 0) clothIndex++;
+    setClothIndex(clothIndex);
+    int mouthIndex = Random().nextInt(layoutMouths.length);
+    if (mouthIndex == 0) mouthIndex++;
+    setMouthIndex(mouthIndex);
+    int eyeIndex = Random().nextInt(layoutEye.length);
+    if (eyeIndex == 0) eyeIndex++;
+    setEyeIndex(eyeIndex);
+    int eyebrowIndex = Random().nextInt(layoutEyebrows.length);
+    if (eyebrowIndex == 0) eyebrowIndex++;
+    setEyebrowIndex(eyebrowIndex);
+    final hairIndex = Random().nextInt(layoutHair.length);
+    setHairIndex(hairIndex);
+    final skinIndex = Random().nextInt(layoutSkins.length);
+    setSkinIndex(skinIndex);
   }
 }

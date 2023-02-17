@@ -26,14 +26,19 @@ class OptionMenuWidget extends GetView<AppController> {
             return Flex(
               direction: Axis.horizontal,
               children: [
-                InkWell(
-                  onTap: () {
-                    // update category to 0
-                    controller.setCategoryIndex(0);
-                  },
-                  child: const Icon(
-                    Icons.arrow_back_ios_new,
-                    size: 64,
+                Card(
+                  child: InkWell(
+                    onTap: () {
+                      // update category to 0
+                      controller.setCategoryIndex(0);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.reply_outlined,
+                        size: 96,
+                      ),
+                    ),
                   ),
                 ),
                 OptionMenu(
