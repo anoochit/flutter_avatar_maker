@@ -100,6 +100,17 @@ const layoutGlasses = [
   "assets/layouts/glasses/rambo.svg",
 ];
 
+const layoutTattoos = [
+  "assets/layouts/tattoos/none.svg",
+  "assets/layouts/tattoos/airbender.svg",
+  "assets/layouts/tattoos/front.svg",
+  "assets/layouts/tattoos/harry.svg",
+  "assets/layouts/tattoos/krilin.svg",
+  "assets/layouts/tattoos/throat.svg",
+  "assets/layouts/tattoos/tribal.svg",
+  "assets/layouts/tattoos/tribal2.svg",
+];
+
 // options
 const optionClothes = [
   "assets/options/clothes/none.svg",
@@ -202,6 +213,17 @@ const optionGlasses = [
   "assets/options/glasses/rambo.svg",
 ];
 
+const optionTattoos = [
+  "assets/options/tattoos/none.svg",
+  "assets/options/tattoos/airbender.svg",
+  "assets/options/tattoos/front.svg",
+  "assets/options/tattoos/harry.svg",
+  "assets/options/tattoos/krilin.svg",
+  "assets/options/tattoos/throat.svg",
+  "assets/options/tattoos/tribal.svg",
+  "assets/options/tattoos/tribal2.svg",
+];
+
 // category menu
 class CategoryMenu {
   String image;
@@ -221,4 +243,5 @@ final listCategory = [
   CategoryMenu(image: optionFacialhair[1], index: 6),
   CategoryMenu(image: optionClothes[1], index: 7),
   CategoryMenu(image: optionGlasses[1], index: 8),
+  CategoryMenu(image: optionTattoos[5], index: 9),
 ];

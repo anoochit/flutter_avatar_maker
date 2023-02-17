@@ -41,6 +41,13 @@ class HomePage extends StatelessWidget {
                     width: scWidth,
                   ),
 
+                  // tattoos
+                  AvatarWidget(
+                    image: layoutTattoos[controller.tattooIndex.value],
+                    height: scWidth,
+                    width: scWidth,
+                  ),
+
                   // hair
                   AvatarWidget(
                     image: layoutHair[controller.hairIndex.value],
@@ -118,6 +125,8 @@ class HomePage extends StatelessWidget {
                     OptionMenuWidget(options: optionClothes, label: 'cloth'),
                     // glasses
                     OptionMenuWidget(options: optionGlasses, label: 'glasses'),
+                    // tattoos
+                    OptionMenuWidget(options: optionTattoos, label: 'tattoo'),
                   ],
                 ),
               ),
