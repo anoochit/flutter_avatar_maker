@@ -1,8 +1,8 @@
-<svg viewBox="0 0 280 280">
+<svg viewBox="0 0 150 150">
     <g id="e_surprised">
-        <circle fill="#FEFEFE" cx="148" cy="153" r="17"/>
-        <circle fill="#4D4D4D" stroke="#5F4A37" stroke-width="0.9" cx="148" cy="153" r="8"/>
-        <circle fill="#FEFEFE" cx="212" cy="153" r="17"/>
-        <circle fill="#4D4D4D" cx="212" cy="153" r="8"/>
+        <circle fill="#FEFEFE" cx="48" cy="100" r="17"/>
+        <circle fill="#4D4D4D" stroke="#5F4A37" stroke-width="0.9" cx="48" cy="100" r="8"/>
+        <circle fill="#FEFEFE" cx="112" cy="100" r="17"/>
+        <circle fill="#4D4D4D" cx="112" cy="100" r="8"/>
     </g>
 </svg>
