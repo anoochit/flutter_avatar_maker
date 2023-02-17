@@ -1,4 +1,4 @@
-package com.example.flutter_avatar_maker
+package net.redlinesoft.avatar_maker
 
 import io.flutter.embedding.android.FlutterActivity
 

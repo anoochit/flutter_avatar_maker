@@ -151,3 +151,22 @@ const optionSkins = [
   "assets/options/skins/black.svg",
   "assets/options/skins/white.svg",
 ];
+
+// category menu
+class CategoryMenu {
+  String image;
+  int index;
+  CategoryMenu({
+    required this.image,
+    required this.index,
+  });
+}
+
+final listCategory = [
+  CategoryMenu(image: optionSkins[1], index: 1),
+  CategoryMenu(image: optionHair[1], index: 2),
+  CategoryMenu(image: optionEyebrows[1], index: 3),
+  CategoryMenu(image: optionEye[1], index: 4),
+  CategoryMenu(image: optionMouths[1], index: 5),
+  CategoryMenu(image: optionClothes[1], index: 6),
+];

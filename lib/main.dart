@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avatar_maker/binging/root_binging.dart';
+import 'package:get/get.dart';
 
 import 'home.dart';
 
@@ -14,14 +16,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorSchemeSeed: Colors.blue,
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      initialBinding: RootBinding(),
+      getPages: [
+        GetPage(
+          name: '/',
+          page: () => HomePage(),
+        )
+      ],
     );
   }
 }

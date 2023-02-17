@@ -7,19 +7,25 @@ class OptionMenu extends StatelessWidget {
     required this.image,
     required this.height,
     required this.width,
+    required this.onTap,
   });
 
   final String image;
   final double height;
   final double width;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: SvgPicture.asset(
-        image,
-        height: height,
-        width: width,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: InkWell(
+        onTap: () => onTap(),
+        child: SvgPicture.asset(
+          image,
+          height: height,
+          width: width,
+        ),
       ),
     );
   }
