@@ -54,15 +54,13 @@ class ToolBarWidget extends StatelessWidget {
                       ),
                       delay: const Duration(milliseconds: 10))
                   .then((image) async {
-                if (image != null) {
-                  final directory = await getApplicationDocumentsDirectory();
-                  final imagePath =
-                      await File('${directory.path}/image.png').create();
-                  await imagePath.writeAsBytes(image);
+                final directory = await getApplicationDocumentsDirectory();
+                final imagePath =
+                    await File('${directory.path}/image.png').create();
+                await imagePath.writeAsBytes(image);
 
-                  /// Share Plugin
-                  await Share.shareXFiles([XFile(imagePath.path)]);
-                }
+                /// Share Plugin
+                await Share.shareXFiles([XFile(imagePath.path)]);
               });
             },
             icon: const Icon(
