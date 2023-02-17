@@ -24,6 +24,8 @@ class AppController extends GetxController {
   RxInt glassesIndex = 0.obs;
   // tattoos
   RxInt tattooIndex = 0.obs;
+  // accesories
+  RxInt accesoriesIndex = 0.obs;
 
   @override
   void onInit() {
@@ -81,6 +83,11 @@ class AppController extends GetxController {
     update();
   }
 
+  setAccesoriesIndex(int index) {
+    accesoriesIndex.value = index;
+    update();
+  }
+
   void updateOption({required String label, required int index}) {
     switch (label) {
       case "skin":
@@ -110,6 +117,9 @@ class AppController extends GetxController {
       case "tattoo":
         setTattooIndex(index);
         break;
+      case "accesories":
+        setAccesoriesIndex(index);
+        break;
     }
   }
 
@@ -136,5 +146,7 @@ class AppController extends GetxController {
     setGlassesIndex(glassesIndex);
     final tattooIndex = Random().nextInt(layoutTattoos.length);
     setTattooIndex(tattooIndex);
+    final accesoriesIndex = Random().nextInt(layoutAccesories.length);
+    setAccesoriesIndex(accesoriesIndex);
   }
 }

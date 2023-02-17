@@ -111,6 +111,14 @@ const layoutTattoos = [
   "assets/layouts/tattoos/tribal2.svg",
 ];
 
+const layoutAccesories = [
+  "assets/layouts/accesories/none.svg",
+  "assets/layouts/accesories/earphones.svg",
+  "assets/layouts/accesories/earring1.svg",
+  "assets/layouts/accesories/earring2.svg",
+  "assets/layouts/accesories/earring3.svg",
+];
+
 // options
 const optionClothes = [
   "assets/options/clothes/none.svg",
@@ -224,6 +232,14 @@ const optionTattoos = [
   "assets/options/tattoos/tribal2.svg",
 ];
 
+const optionAccesories = [
+  "assets/options/accesories/none.svg",
+  "assets/options/accesories/earphones.svg",
+  "assets/options/accesories/earring1.svg",
+  "assets/options/accesories/earring2.svg",
+  "assets/options/accesories/earring3.svg",
+];
+
 // category menu
 class CategoryMenu {
   String image;
@@ -244,4 +260,5 @@ final listCategory = [
   CategoryMenu(image: optionClothes[1], index: 7),
   CategoryMenu(image: optionGlasses[1], index: 8),
   CategoryMenu(image: optionTattoos[5], index: 9),
+  CategoryMenu(image: optionAccesories[1], index: 10),
 ];
