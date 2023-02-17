@@ -82,6 +82,14 @@ const layoutSkins = [
   "assets/layouts/skins/white.svg",
 ];
 
+const layoutFacialhair = [
+  "assets/layouts/facialhair/none.svg",
+  "assets/layouts/facialhair/fancy.svg",
+  "assets/layouts/facialhair/light.svg",
+  "assets/layouts/facialhair/magestic.svg",
+  "assets/layouts/facialhair/magnum.svg",
+];
+
 // options
 const optionClothes = [
   "assets/options/clothes/none.svg",
@@ -166,6 +174,14 @@ const optionSkins = [
   "assets/options/skins/white.svg",
 ];
 
+const optionFacialhair = [
+  "assets/options/facialhair/none.svg",
+  "assets/options/facialhair/fancy.svg",
+  "assets/options/facialhair/light.svg",
+  "assets/options/facialhair/magestic.svg",
+  "assets/options/facialhair/magnum.svg",
+];
+
 // category menu
 class CategoryMenu {
   String image;
@@ -182,5 +198,6 @@ final listCategory = [
   CategoryMenu(image: optionEyebrows[1], index: 3),
   CategoryMenu(image: optionEye[1], index: 4),
   CategoryMenu(image: optionMouths[1], index: 5),
-  CategoryMenu(image: optionClothes[1], index: 6),
+  CategoryMenu(image: optionFacialhair[1], index: 6),
+  CategoryMenu(image: optionClothes[1], index: 7),
 ];

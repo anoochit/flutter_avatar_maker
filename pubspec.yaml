@@ -63,12 +63,14 @@ flutter:
     - assets/layouts/eyes/
     - assets/layouts/hair/
     - assets/layouts/mouths/
+    - assets/layouts/facialhair/
     - assets/layouts/skins/
     - assets/options/clothes/
     - assets/options/eyebrows/
     - assets/options/eyes/
     - assets/options/hair/
     - assets/options/mouths/
+    - assets/options/facialhair/
     - assets/options/skins/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see

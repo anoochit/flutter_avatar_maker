@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   controller.randomAvatar();
                 },
-                icon: Icon(Icons.refresh),
+                icon: const Icon(Icons.refresh),
               )
             ],
           ),
@@ -75,6 +75,13 @@ class HomePage extends StatelessWidget {
                     height: scWidth,
                     width: scWidth,
                   ),
+
+                  // facialhair
+                  AvatarWidget(
+                    image: layoutFacialhair[controller.facialhairIndex.value],
+                    height: scWidth,
+                    width: scWidth,
+                  ),
                 ],
               ),
               // space
@@ -97,6 +104,9 @@ class HomePage extends StatelessWidget {
                     OptionMenuWidget(options: optionEye, label: 'eye'),
                     // mouth
                     OptionMenuWidget(options: optionMouths, label: 'mouth'),
+                    // mouth
+                    OptionMenuWidget(
+                        options: optionFacialhair, label: 'facialhair'),
                     // cloth
                     OptionMenuWidget(options: optionClothes, label: 'cloth'),
                   ],

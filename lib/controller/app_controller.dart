@@ -16,6 +16,8 @@ class AppController extends GetxController {
   RxInt eyeIndex = 4.obs;
   // mouth
   RxInt mouthIndex = 12.obs;
+  // facialhair
+  RxInt facialhairIndex = 1.obs;
   // cloth
   RxInt clothIndex = 2.obs;
 
@@ -55,6 +57,11 @@ class AppController extends GetxController {
     update();
   }
 
+  setFacialhairIndex(int index) {
+    facialhairIndex.value = index;
+    update();
+  }
+
   setClothIndex(int index) {
     clothIndex.value = index;
     update();
@@ -77,6 +84,9 @@ class AppController extends GetxController {
       case "mouth":
         setMouthIndex(index);
         break;
+      case "facialhair":
+        setFacialhairIndex(index);
+        break;
       case "cloth":
         setClothIndex(index);
         break;
@@ -98,6 +108,8 @@ class AppController extends GetxController {
     setEyebrowIndex(eyebrowIndex);
     final hairIndex = Random().nextInt(layoutHair.length);
     setHairIndex(hairIndex);
+    final facialhairIndex = Random().nextInt(layoutFacialhair.length);
+    setFacialhairIndex(facialhairIndex);
     final skinIndex = Random().nextInt(layoutSkins.length);
     setSkinIndex(skinIndex);
   }
