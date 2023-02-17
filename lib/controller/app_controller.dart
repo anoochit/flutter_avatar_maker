@@ -149,4 +149,28 @@ class AppController extends GetxController {
     final accesoriesIndex = Random().nextInt(layoutAccesories.length);
     setAccesoriesIndex(accesoriesIndex);
   }
+
+  void reset() {
+    // skin
+    skinIndex = 1.obs;
+    // hair
+    hairIndex = 0.obs;
+    // eyebrow
+    eyebrowIndex = 0.obs;
+    // eye
+    eyeIndex = 0.obs;
+    // mouth
+    mouthIndex = 0.obs;
+    // facialhair
+    facialhairIndex = 0.obs;
+    // cloth
+    clothIndex = 0.obs;
+    // glasses
+    glassesIndex = 0.obs;
+    // tattoos
+    tattooIndex = 0.obs;
+    // accesories
+    accesoriesIndex = 0.obs;
+    update();
+  }
 }

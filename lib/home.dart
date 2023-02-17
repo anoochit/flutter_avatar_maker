@@ -18,14 +18,6 @@ class HomePage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: const Text("Avatar Maker"),
-            actions: [
-              IconButton(
-                onPressed: () {
-                  controller.randomAvatar();
-                },
-                icon: const Icon(Icons.refresh),
-              )
-            ],
           ),
           body: Column(
             children: [
@@ -107,6 +99,34 @@ class HomePage extends StatelessWidget {
               ),
               // space
               const Spacer(),
+              // toolbar
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // reset
+                  IconButton(
+                    onPressed: () {
+                      controller.reset();
+                    },
+                    icon: const Icon(Icons.delete_outline),
+                  ),
+                  // refresh
+                  IconButton(
+                    onPressed: () {
+                      controller.randomAvatar();
+                    },
+                    icon: const Icon(Icons.refresh),
+                  ),
+                  // save
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.save_alt),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
               // category
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -116,27 +136,55 @@ class HomePage extends StatelessWidget {
                     // category
                     CategoryMenuWidget(),
                     // skin
-                    OptionMenuWidget(options: optionSkins, label: 'skin'),
+                    OptionMenuWidget(
+                      options: optionSkins,
+                      label: 'skin',
+                    ),
                     // hair
-                    OptionMenuWidget(options: optionHair, label: 'hair'),
+                    OptionMenuWidget(
+                      options: optionHair,
+                      label: 'hair',
+                    ),
                     // eyebrow
-                    OptionMenuWidget(options: optionEyebrows, label: 'eyebrow'),
+                    OptionMenuWidget(
+                      options: optionEyebrows,
+                      label: 'eyebrow',
+                    ),
                     // eye
-                    OptionMenuWidget(options: optionEye, label: 'eye'),
-                    // mouth
-                    OptionMenuWidget(options: optionMouths, label: 'mouth'),
+                    OptionMenuWidget(
+                      options: optionEye,
+                      label: 'eye',
+                    ),
                     // mouth
                     OptionMenuWidget(
-                        options: optionFacialhair, label: 'facialhair'),
+                      options: optionMouths,
+                      label: 'mouth',
+                    ),
+                    // mouth
+                    OptionMenuWidget(
+                      options: optionFacialhair,
+                      label: 'facialhair',
+                    ),
                     // cloth
-                    OptionMenuWidget(options: optionClothes, label: 'cloth'),
+                    OptionMenuWidget(
+                      options: optionClothes,
+                      label: 'cloth',
+                    ),
                     // glasses
-                    OptionMenuWidget(options: optionGlasses, label: 'glasses'),
+                    OptionMenuWidget(
+                      options: optionGlasses,
+                      label: 'glasses',
+                    ),
                     // tattoos
-                    OptionMenuWidget(options: optionTattoos, label: 'tattoo'),
+                    OptionMenuWidget(
+                      options: optionTattoos,
+                      label: 'tattoo',
+                    ),
                     // accesories
                     OptionMenuWidget(
-                        options: optionAccesories, label: 'accesories'),
+                      options: optionAccesories,
+                      label: 'accesories',
+                    ),
                   ],
                 ),
               ),
