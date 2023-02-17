@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Avatar Maker"),
@@ -23,43 +24,43 @@ class HomePage extends StatelessWidget {
               // skin
               AvatarWidget(
                 image: layoutSkins[1],
-                height: MediaQuery.of(context).size.width,
-                width: MediaQuery.of(context).size.width,
+                height: scWidth,
+                width: scWidth,
               ),
 
               // hair
               AvatarWidget(
-                image: layoutHair[1],
-                height: MediaQuery.of(context).size.width,
-                width: MediaQuery.of(context).size.width,
+                image: layoutHair[6],
+                height: scWidth,
+                width: scWidth,
               ),
 
               // eyebrow
               AvatarWidget(
                 image: layoutEyebrows[1],
-                height: MediaQuery.of(context).size.width,
-                width: MediaQuery.of(context).size.width,
+                height: scWidth,
+                width: scWidth,
               ),
 
               // eye
               AvatarWidget(
-                image: layoutEye[1],
-                height: MediaQuery.of(context).size.width,
-                width: MediaQuery.of(context).size.width,
+                image: layoutEye[4],
+                height: scWidth,
+                width: scWidth,
               ),
 
               // mouth
               AvatarWidget(
-                image: layoutMouths[1],
-                height: MediaQuery.of(context).size.width,
-                width: MediaQuery.of(context).size.width,
+                image: layoutMouths[12],
+                height: scWidth,
+                width: scWidth,
               ),
 
               // cloth
               AvatarWidget(
-                image: layoutClothes[1],
-                height: MediaQuery.of(context).size.width,
-                width: MediaQuery.of(context).size.width,
+                image: layoutClothes[2],
+                height: scWidth,
+                width: scWidth,
               ),
             ],
           ),
