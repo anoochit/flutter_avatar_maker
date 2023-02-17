@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: [
           SvgPicture.asset("assets/layouts/skins/white.svg"),
-          SvgPicture.asset("assets/layouts/eyes/cry.svg"),
+          SvgPicture.asset("assets/layouts/eyes/none.svg"),
           SvgPicture.asset("assets/layouts/hair/hairbun.svg"),
           SvgPicture.asset("assets/layouts/mouths/sad.svg"),
           SvgPicture.asset("assets/layouts/clothes/hoodie.svg"),

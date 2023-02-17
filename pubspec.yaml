@@ -54,12 +54,18 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/layouts/skins/
     - assets/layouts/clothes/
     - assets/layouts/eyebrows/
     - assets/layouts/eyes/
     - assets/layouts/hair/
     - assets/layouts/mouths/
+    - assets/layouts/skins/
+    - assets/options/clothes/
+    - assets/options/eyebrows/
+    - assets/options/eyes/
+    - assets/options/hair/
+    - assets/options/mouths/
+    - assets/options/skins/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
