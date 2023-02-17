@@ -126,28 +126,39 @@ class AppController extends GetxController {
   void randomAvatar() {
     int clothIndex = Random().nextInt(layoutClothes.length);
     if (clothIndex == 0) clothIndex++;
-    setClothIndex(clothIndex);
+    this.clothIndex.value = clothIndex;
+
     int mouthIndex = Random().nextInt(layoutMouths.length);
     if (mouthIndex == 0) mouthIndex++;
-    setMouthIndex(mouthIndex);
+    this.mouthIndex.value = mouthIndex;
+
     int eyeIndex = Random().nextInt(layoutEye.length);
     if (eyeIndex == 0) eyeIndex++;
-    setEyeIndex(eyeIndex);
+    this.eyeIndex.value = eyeIndex;
+
     int eyebrowIndex = Random().nextInt(layoutEyebrows.length);
     if (eyebrowIndex == 0) eyebrowIndex++;
-    setEyebrowIndex(eyebrowIndex);
+    this.eyebrowIndex.value = eyebrowIndex;
+
     final hairIndex = Random().nextInt(layoutHair.length);
-    setHairIndex(hairIndex);
+    this.hairIndex.value = hairIndex;
+
     final facialhairIndex = Random().nextInt(layoutFacialhair.length);
-    setFacialhairIndex(facialhairIndex);
+    this.facialhairIndex.value = facialhairIndex;
+
     final skinIndex = Random().nextInt(layoutSkins.length);
-    setSkinIndex(skinIndex);
+    this.skinIndex.value = skinIndex;
+
     final glassesIndex = Random().nextInt(layoutGlasses.length);
-    setGlassesIndex(glassesIndex);
+    this.glassesIndex.value = glassesIndex;
+
     final tattooIndex = Random().nextInt(layoutTattoos.length);
-    setTattooIndex(tattooIndex);
+    this.tattooIndex.value = tattooIndex;
+
     final accesoriesIndex = Random().nextInt(layoutAccesories.length);
-    setAccesoriesIndex(accesoriesIndex);
+    this.accesoriesIndex.value = accesoriesIndex;
+
+    update();
   }
 
   void reset() {
