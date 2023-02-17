@@ -48,16 +48,16 @@ class HomePage extends StatelessWidget {
                     width: scWidth,
                   ),
 
-                  // hair
+                  // eyebrow
                   AvatarWidget(
-                    image: layoutHair[controller.hairIndex.value],
+                    image: layoutEyebrows[controller.eyebrowIndex.value],
                     height: scWidth,
                     width: scWidth,
                   ),
 
-                  // eyebrow
+                  // hair
                   AvatarWidget(
-                    image: layoutEyebrows[controller.eyebrowIndex.value],
+                    image: layoutHair[controller.hairIndex.value],
                     height: scWidth,
                     width: scWidth,
                   ),
