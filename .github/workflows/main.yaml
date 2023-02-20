@@ -35,6 +35,7 @@ jobs:
 
       - run: ls android/app/key.jks
       - run: ls android/
+      - run: cat android/key.properties
 
       # # Get dependencies and make assigned appbundle
       # - run: |
