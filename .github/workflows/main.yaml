@@ -8,10 +8,7 @@ on:
       - final
       #- master
 env:
-  KEY_JKS: ${{ secrets.KEYSTORE2 }}
-  KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-  KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-  KEY_STORE: ${{ secrets.KEY_STORE }}
+  PROPERTIES_PATH: "./android/key.properties"
 
 name: "Build & Release"
 jobs:
@@ -28,9 +25,23 @@ jobs:
         with:
           channel: "stable"
 
-          # run: echo $KEY_JKS > key.jks && flutter pub get && flutter build apk --release
-      - run: echo $KEY_JKS > android/key.jks && flutter pub get && flutter build apk --split-per-abi && flutter build appbundle
+      # Creating the key.properties file
+      - run: |
+          echo keyPassword=\${{ secrets.KEY_STORE }} > ${{env.PROPERTIES_PATH}}
+          echo storePassword=\${{ secrets.KEY_PASSWORD }} >> ${{env.PROPERTIES_PATH}}
+          echo keyAlias=\${{ secrets.KEY_ALIAS }} >> ${{env.PROPERTIES_PATH}}
+      # Decoding base64 key into a file
+      - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key.jks
 
+      # Get dependencies and make assigned appbundle
+      - run: |
+          flutter pub get
+          flutter build appbundle
+
+      # build apk
+      - run: flutter build apk --split-per-abi
+
+      # Build no-codesign for ios
       - run: |
           flutter build ios --no-codesign
           cd build/ios/iphoneos
