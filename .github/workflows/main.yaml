@@ -33,23 +33,26 @@ jobs:
       # Decoding base64 key into a file
       - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key.jks
 
-      # Get dependencies and make assigned appbundle
-      - run: |
-          flutter pub get
-          flutter build appbundle
+      - run: ls android/app/key.jks
+      - run: ls android/
 
-      # build apk
-      - run: flutter build apk --split-per-abi
+      # # Get dependencies and make assigned appbundle
+      # - run: |
+      #     flutter pub get
+      #     flutter build appbundle
 
-      # Build no-codesign for ios
-      - run: |
-          flutter build ios --no-codesign
-          cd build/ios/iphoneos
-          mkdir Payload
-          cd Payload
-          ln -s ../Runner.app
-          cd ..
-          zip -r app.ipa Payload
+      # # build apk
+      # - run: flutter build apk --split-per-abi
+
+      # # Build no-codesign for ios
+      # - run: |
+      #     flutter build ios --no-codesign
+      #     cd build/ios/iphoneos
+      #     mkdir Payload
+      #     cd Payload
+      #     ln -s ../Runner.app
+      #     cd ..
+      #     zip -r app.ipa Payload
 
       - name: Push to Releases
         uses: ncipollo/release-action@v1
