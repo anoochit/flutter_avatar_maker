@@ -53,31 +53,31 @@ android {
         versionName flutterVersionName
     }
 
-    signingConfigs {
-        release {
-            //From decoded key
-            storeFile file('key.jks')
-            //From key.properties
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storePassword keystoreProperties['storePassword']
-        }
-    }
+    // signingConfigs {
+    //     release {
+    //         //From decoded key
+    //         storeFile file('key.jks')
+    //         //From key.properties
+    //         keyAlias keystoreProperties['keyAlias']
+    //         keyPassword keystoreProperties['keyPassword']
+    //         storePassword keystoreProperties['storePassword']
+    //     }
+    // }
+
+    // buildTypes {
+    //     release {
+    //         minifyEnabled true
+    //         signingConfig signingConfigs.release
+    //     }
+    // }
 
     buildTypes {
         release {
-            minifyEnabled true
-            signingConfig signingConfigs.release
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
         }
     }
-
-//     buildTypes {
-//         release {
-//             // TODO: Add your own signing config for the release build.
-//             // Signing with the debug keys for now, so `flutter run --release` works.
-//             signingConfig signingConfigs.debug
-//         }
-//     }
 }
 
 flutter {
