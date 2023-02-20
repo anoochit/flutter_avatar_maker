@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_avatar_maker/controller/app_controller.dart';
-import 'package:get/get.dart';
 
 import '../widgets/avartar_image.dart';
 import '../widgets/category_toolbar.dart';
 import '../widgets/toolbar.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
-
-  AppController controller = Get.find<AppController>();
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +23,7 @@ class HomePage extends StatelessWidget {
           // space
           const Spacer(),
           // toolbar
-          ToolBarWidget(),
+          const ToolBarWidget(),
           // category toolbar
           const CategoryToolbarWidget(),
         ],

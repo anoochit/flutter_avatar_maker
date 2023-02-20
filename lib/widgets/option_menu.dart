@@ -9,20 +9,16 @@ class OptionMenuWidget extends GetView<AppController> {
     super.key,
     required this.options,
     required this.label,
-    required this.width,
-    required this.height,
   });
 
   final List<String> options;
   final String label;
 
-  final double width;
-  final double height;
-
   @override
   Widget build(BuildContext context) {
+    double scWidth = (context.width / 4);
     return SizedBox(
-      height: height,
+      height: scWidth,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: options.length,
@@ -33,8 +29,8 @@ class OptionMenuWidget extends GetView<AppController> {
               children: [
                 Card(
                   child: SizedBox(
-                    height: height,
-                    width: width,
+                    height: scWidth,
+                    width: scWidth,
                     child: InkWell(
                       onTap: () {
                         // update category to 0
@@ -52,8 +48,8 @@ class OptionMenuWidget extends GetView<AppController> {
                 ),
                 OptionMenu(
                   image: options[index],
-                  height: height,
-                  width: width,
+                  height: scWidth,
+                  width: scWidth,
                   onTap: () {
                     // update option
                     controller.updateOption(label: label, index: index);
@@ -64,8 +60,8 @@ class OptionMenuWidget extends GetView<AppController> {
           }
           return OptionMenu(
             image: options[index],
-            height: height,
-            width: width,
+            height: scWidth,
+            width: scWidth,
             onTap: () {
               // update
               controller.updateOption(label: label, index: index);

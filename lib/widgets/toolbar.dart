@@ -1,16 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_avatar_maker/widgets/avartar_image.dart';
 import 'package:get/get.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:screenshot/screenshot.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../controller/app_controller.dart';
 
 class ToolBarWidget extends StatelessWidget {
-  ToolBarWidget({
+  const ToolBarWidget({
     super.key,
   });
 
