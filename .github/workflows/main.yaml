@@ -28,7 +28,7 @@ jobs:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           KEY_STORE: ${{ secrets.KEY_STORE }}
-        - run: echo $KEY_JKS > key.jks && flutter pub get && flutter build apk --release
+          run: echo $KEY_JKS > key.jks && flutter pub get && flutter build apk --release
 
       # - run: flutter pub get
 
