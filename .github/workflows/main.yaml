@@ -30,18 +30,23 @@ jobs:
           KEY_STORE: ${{ secrets.KEY_STORE }}
           run: echo $KEY_JKS > key.jks && flutter pub get && flutter test && flutter build apk --release
 
-      - run: flutter pub get
+      # - run: flutter pub get
+
       # - run: flutter test
+
       # - run: flutter build apk --debug --split-per-abi
-      - run: flutter build appbundle
-      - run: |
-          flutter build ios --no-codesign
-          cd build/ios/iphoneos
-          mkdir Payload
-          cd Payload
-          ln -s ../Runner.app
-          cd ..
-          zip -r app.ipa Payload
+
+      # - run: flutter build appbundle
+
+      # - run: |
+      #     flutter build ios --no-codesign
+      #     cd build/ios/iphoneos
+      #     mkdir Payload
+      #     cd Payload
+      #     ln -s ../Runner.app
+      #     cd ..
+      #     zip -r app.ipa Payload
+
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
