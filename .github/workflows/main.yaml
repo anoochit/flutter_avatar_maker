@@ -29,15 +29,7 @@ jobs:
           channel: "stable"
 
           # run: echo $KEY_JKS > key.jks && flutter pub get && flutter build apk --release
-      - run: echo $KEY_JKS > android/key.jks
-
-      - run: flutter pub get
-
-      # - run: flutter test
-
-      - run: flutter build apk --split-per-abi
-
-      - run: flutter build appbundle
+      - run: echo $KEY_JKS > android/key.jks && flutter pub get && flutter build apk --split-per-abi && flutter build appbundle
 
       - run: |
           flutter build ios --no-codesign
