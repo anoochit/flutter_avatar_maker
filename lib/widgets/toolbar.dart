@@ -23,7 +23,7 @@ class ToolBarWidget extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.delete_outline,
-                size: 48.0,
+                size: 36.0,
               ),
             ),
           ),
@@ -36,7 +36,7 @@ class ToolBarWidget extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.refresh,
-                size: 48.0,
+                size: 36.0,
               ),
             ),
           ),
@@ -49,7 +49,7 @@ class ToolBarWidget extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.share,
-                size: 48.0,
+                size: 36.0,
               ),
             ),
           )
