@@ -33,14 +33,14 @@ jobs:
       # Decoding base64 key into a file
       - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key.jks
 
-      - run: ls android/app/key.jks
-      - run: ls android/
-      - run: cat android/key.properties
+      # - run: ls android/app/key.jks
+      # - run: ls android/
+      # - run: cat android/key.properties
 
       # # Get dependencies and make assigned appbundle
-      # - run: |
-      #     flutter pub get
-      #     flutter build appbundle
+      - run: |
+          flutter pub get
+          flutter build appbundle
 
       # # build apk
       # - run: flutter build apk --split-per-abi
