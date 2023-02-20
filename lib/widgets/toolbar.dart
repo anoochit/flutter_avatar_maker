@@ -14,8 +14,6 @@ class ToolBarWidget extends StatelessWidget {
     super.key,
   });
 
-  final ScreenshotController _screenshotController = ScreenshotController();
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AppController>(builder: (controller) {
@@ -23,49 +21,42 @@ class ToolBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // reset
-          IconButton(
-            onPressed: () {
-              controller.reset();
-            },
-            icon: const Icon(
-              Icons.delete_outline,
-              size: 32,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: IconButton(
+              onPressed: () {
+                controller.reset();
+              },
+              icon: const Icon(
+                Icons.delete_outline,
+                size: 48.0,
+              ),
             ),
           ),
           // refresh
-          IconButton(
-            onPressed: () {
-              controller.randomAvatar();
-            },
-            icon: const Icon(
-              Icons.refresh,
-              size: 32,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: IconButton(
+              onPressed: () {
+                controller.randomAvatar();
+              },
+              icon: const Icon(
+                Icons.refresh,
+                size: 48.0,
+              ),
             ),
           ),
           // save and share
-          IconButton(
-            onPressed: () async {
-              // save and share
-              await _screenshotController
-                  .captureFromWidget(
-                      const AvatarImageWidget(
-                        width: 400,
-                        heigth: 400,
-                      ),
-                      delay: const Duration(milliseconds: 10))
-                  .then((image) async {
-                final directory = await getApplicationDocumentsDirectory();
-                final imagePath =
-                    await File('${directory.path}/image.png').create();
-                await imagePath.writeAsBytes(image);
-
-                /// Share Plugin
-                await Share.shareXFiles([XFile(imagePath.path)]);
-              });
-            },
-            icon: const Icon(
-              Icons.share,
-              size: 32,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: IconButton(
+              onPressed: () async {
+                controller.shareAvatarImage();
+              },
+              icon: const Icon(
+                Icons.share,
+                size: 48.0,
+              ),
             ),
           )
         ],

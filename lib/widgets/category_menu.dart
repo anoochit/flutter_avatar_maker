@@ -12,16 +12,17 @@ class CategoryMenuWidget extends GetView<AppController> {
 
   @override
   Widget build(BuildContext context) {
+    double scWidth = (context.width / 4);
     return SizedBox(
-      height: 120,
+      height: scWidth,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: listCategory.length,
         itemBuilder: (context, index) {
           return OptionMenu(
             image: listCategory[index].image,
-            height: 120,
-            width: 120,
+            height: scWidth,
+            width: scWidth,
             onTap: () {
               controller.setCategoryIndex(listCategory[index].index);
             },

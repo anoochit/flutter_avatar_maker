@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avatar_maker/controller/app_controller.dart';
+import 'package:get/get.dart';
 
 import '../widgets/avartar_image.dart';
 import '../widgets/category_toolbar.dart';
 import '../widgets/toolbar.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  AppController controller = Get.find<AppController>();
 
   @override
   Widget build(BuildContext context) {

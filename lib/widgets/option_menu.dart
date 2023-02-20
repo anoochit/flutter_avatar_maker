@@ -9,15 +9,20 @@ class OptionMenuWidget extends GetView<AppController> {
     super.key,
     required this.options,
     required this.label,
+    required this.width,
+    required this.height,
   });
 
   final List<String> options;
   final String label;
 
+  final double width;
+  final double height;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120,
+      height: height,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: options.length,
@@ -27,24 +32,28 @@ class OptionMenuWidget extends GetView<AppController> {
               direction: Axis.horizontal,
               children: [
                 Card(
-                  child: InkWell(
-                    onTap: () {
-                      // update category to 0
-                      controller.setCategoryIndex(0);
-                    },
-                    child: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(
-                        Icons.reply_outlined,
-                        size: 96,
+                  child: SizedBox(
+                    height: height,
+                    width: width,
+                    child: InkWell(
+                      onTap: () {
+                        // update category to 0
+                        controller.setCategoryIndex(0);
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.reply_outlined,
+                          size: 96,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 OptionMenu(
                   image: options[index],
-                  height: 120,
-                  width: 120,
+                  height: height,
+                  width: width,
                   onTap: () {
                     // update option
                     controller.updateOption(label: label, index: index);
@@ -55,8 +64,8 @@ class OptionMenuWidget extends GetView<AppController> {
           }
           return OptionMenu(
             image: options[index],
-            height: 120,
-            width: 120,
+            height: height,
+            width: width,
             onTap: () {
               // update
               controller.updateOption(label: label, index: index);

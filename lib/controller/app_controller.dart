@@ -1,7 +1,14 @@
+import 'dart:io';
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_avatar_maker/const.dart';
 import 'package:get/get.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:screenshot/screenshot.dart';
+import 'package:share_plus/share_plus.dart';
+
+import '../widgets/avartar_image.dart';
 
 class AppController extends GetxController {
   // category
@@ -183,5 +190,27 @@ class AppController extends GetxController {
     // accesories
     accesoriesIndex = 0.obs;
     update();
+  }
+
+  shareAvatarImage() async {
+    final ScreenshotController screenshotController = ScreenshotController();
+    // save and share
+    await screenshotController
+        .captureFromWidget(
+            const AvatarImageWidget(
+              width: 1200,
+              heigth: 1200,
+            ),
+            targetSize: const Size(1200, 1200),
+            pixelRatio: 1.0,
+            delay: const Duration(milliseconds: 10))
+        .then((image) async {
+      final directory = await getApplicationDocumentsDirectory();
+      final imagePath = await File('${directory.path}/image.png').create();
+      await imagePath.writeAsBytes(image);
+
+      /// Share Plugin
+      await Share.shareXFiles([XFile(imagePath.path)]);
+    });
   }
 }
