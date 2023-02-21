@@ -16,7 +16,7 @@ class ToolBarWidget extends StatelessWidget {
         children: [
           // reset
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: IconButton(
               onPressed: () {
                 controller.reset();
@@ -29,7 +29,7 @@ class ToolBarWidget extends StatelessWidget {
           ),
           // refresh
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: IconButton(
               onPressed: () {
                 controller.randomAvatar();
@@ -40,9 +40,22 @@ class ToolBarWidget extends StatelessWidget {
               ),
             ),
           ),
+          // save to gallery
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: IconButton(
+              onPressed: () async {
+                controller.saveAvatarImage();
+              },
+              icon: const Icon(
+                Icons.download,
+                size: 36.0,
+              ),
+            ),
+          ),
           // save and share
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: IconButton(
               onPressed: () async {
                 controller.shareAvatarImage();

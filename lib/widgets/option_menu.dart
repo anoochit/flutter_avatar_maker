@@ -36,12 +36,9 @@ class OptionMenuWidget extends GetView<AppController> {
                         // update category to 0
                         controller.setCategoryIndex(0);
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.reply_outlined,
-                          size: 96,
-                        ),
+                      child: const Icon(
+                        Icons.reply_outlined,
+                        size: 48,
                       ),
                     ),
                   ),

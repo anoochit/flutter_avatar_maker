@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_avatar_maker/const.dart';
+import 'package:gallery_saver/gallery_saver.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
@@ -211,6 +212,39 @@ class AppController extends GetxController {
 
       /// Share Plugin
       await Share.shareXFiles([XFile(imagePath.path)]);
+    });
+  }
+
+  saveAvatarImage() async {
+    final ScreenshotController screenshotController = ScreenshotController();
+    // save
+    await screenshotController
+        .captureFromWidget(
+            const AvatarImageWidget(
+              width: 1200,
+              heigth: 1200,
+            ),
+            targetSize: const Size(1200, 1200),
+            pixelRatio: 1.0,
+            delay: const Duration(milliseconds: 10))
+        .then((image) async {
+      final directory = await getApplicationDocumentsDirectory();
+      final filename = DateTime.now().microsecondsSinceEpoch.toString();
+      final imagePath = await File('${directory.path}/$filename.png').create();
+      await imagePath.writeAsBytes(image);
+
+      // save to gallery
+      await GallerySaver.saveImage(imagePath.path).then(
+        (value) {
+          Get.snackbar(
+            'Info',
+            'Save image to gallery complete!',
+            duration: const Duration(
+              seconds: 1,
+            ),
+          );
+        },
+      );
     });
   }
 }
