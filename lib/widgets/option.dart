@@ -5,14 +5,10 @@ class OptionMenu extends StatelessWidget {
   const OptionMenu({
     super.key,
     required this.image,
-    required this.height,
-    required this.width,
     required this.onTap,
   });
 
   final String image;
-  final double height;
-  final double width;
   final VoidCallback onTap;
 
   @override
@@ -23,8 +19,6 @@ class OptionMenu extends StatelessWidget {
         onTap: () => onTap(),
         child: SvgPicture.asset(
           image,
-          height: height,
-          width: width,
         ),
       ),
     );

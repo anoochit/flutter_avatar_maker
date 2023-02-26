@@ -14,65 +14,62 @@ class CategoryToolbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AppController>(builder: (controller) {
-      return Padding(
-        padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
-        child: IndexedStack(
-          index: controller.categoryIndex.value,
-          children: const [
-            // category
-            CategoryMenuWidget(),
-            // skin
-            OptionMenuWidget(
-              options: optionSkins,
-              label: 'skin',
-            ),
-            // hair
-            OptionMenuWidget(
-              options: optionHair,
-              label: 'hair',
-            ),
-            // eyebrow
-            OptionMenuWidget(
-              options: optionEyebrows,
-              label: 'eyebrow',
-            ),
-            // eye
-            OptionMenuWidget(
-              options: optionEye,
-              label: 'eye',
-            ),
-            // mouth
-            OptionMenuWidget(
-              options: optionMouths,
-              label: 'mouth',
-            ),
-            // mouth
-            OptionMenuWidget(
-              options: optionFacialhair,
-              label: 'facialhair',
-            ),
-            // cloth
-            OptionMenuWidget(
-              options: optionClothes,
-              label: 'cloth',
-            ),
-            // glasses
-            OptionMenuWidget(
-              options: optionGlasses,
-              label: 'glasses',
-            ),
-            // tattoos
-            OptionMenuWidget(
-              options: optionTattoos,
-              label: 'tattoo',
-            ),
-            // accesories
-            OptionMenuWidget(
-              options: optionAccesories,
-              label: 'accesories',
-            ),
-          ],
-        ),
+      return IndexedStack(
+        index: controller.categoryIndex.value,
+        children: const [
+          // category
+          CategoryMenuWidget(),
+          // skin
+          OptionMenuWidget(
+            options: optionSkins,
+            label: 'skin',
+          ),
+          // hair
+          OptionMenuWidget(
+            options: optionHair,
+            label: 'hair',
+          ),
+          // eyebrow
+          OptionMenuWidget(
+            options: optionEyebrows,
+            label: 'eyebrow',
+          ),
+          // eye
+          OptionMenuWidget(
+            options: optionEye,
+            label: 'eye',
+          ),
+          // mouth
+          OptionMenuWidget(
+            options: optionMouths,
+            label: 'mouth',
+          ),
+          // mouth
+          OptionMenuWidget(
+            options: optionFacialhair,
+            label: 'facialhair',
+          ),
+          // cloth
+          OptionMenuWidget(
+            options: optionClothes,
+            label: 'cloth',
+          ),
+          // glasses
+          OptionMenuWidget(
+            options: optionGlasses,
+            label: 'glasses',
+          ),
+          // tattoos
+          OptionMenuWidget(
+            options: optionTattoos,
+            label: 'tattoo',
+          ),
+          // accesories
+          OptionMenuWidget(
+            options: optionAccesories,
+            label: 'accesories',
+          ),
+        ],
       );
     });
   }

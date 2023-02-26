@@ -16,56 +16,21 @@ class OptionMenuWidget extends GetView<AppController> {
 
   @override
   Widget build(BuildContext context) {
-    double scWidth = (context.width / 4);
-    return SizedBox(
-      height: scWidth,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: options.length,
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            return Flex(
-              direction: Axis.horizontal,
-              children: [
-                Card(
-                  child: SizedBox(
-                    height: scWidth,
-                    width: scWidth,
-                    child: InkWell(
-                      onTap: () {
-                        // update category to 0
-                        controller.setCategoryIndex(0);
-                      },
-                      child: const Icon(
-                        Icons.reply_outlined,
-                        size: 48,
-                      ),
-                    ),
-                  ),
-                ),
-                OptionMenu(
-                  image: options[index],
-                  height: scWidth,
-                  width: scWidth,
-                  onTap: () {
-                    // update option
-                    controller.updateOption(label: label, index: index);
-                  },
-                )
-              ],
-            );
-          }
-          return OptionMenu(
-            image: options[index],
-            height: scWidth,
-            width: scWidth,
-            onTap: () {
-              // update
-              controller.updateOption(label: label, index: index);
-            },
-          );
-        },
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: (context.isLandscape) ? 2 : 1,
       ),
+      scrollDirection: (context.isLandscape) ? Axis.vertical : Axis.horizontal,
+      itemCount: options.length,
+      itemBuilder: (context, index) {
+        return OptionMenu(
+          image: options[index],
+          onTap: () {
+            // update
+            controller.updateOption(label: label, index: index);
+          },
+        );
+      },
     );
   }
 }
