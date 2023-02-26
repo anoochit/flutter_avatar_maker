@@ -12,23 +12,20 @@ class CategoryMenuWidget extends GetView<AppController> {
 
   @override
   Widget build(BuildContext context) {
-    double scWidth = (context.width / 4);
-    return SizedBox(
-      height: scWidth,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: listCategory.length,
-        itemBuilder: (context, index) {
-          return OptionMenu(
-            image: listCategory[index].image,
-            height: scWidth,
-            width: scWidth,
-            onTap: () {
-              controller.setCategoryIndex(listCategory[index].index);
-            },
-          );
-        },
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: (context.isLandscape) ? 2 : 1,
       ),
+      scrollDirection: (context.isLandscape) ? Axis.vertical : Axis.horizontal,
+      itemCount: listCategory.length,
+      itemBuilder: (context, index) {
+        return OptionMenu(
+          image: listCategory[index].image,
+          onTap: () {
+            controller.setCategoryIndex(listCategory[index].index);
+          },
+        );
+      },
     );
   }
 }
