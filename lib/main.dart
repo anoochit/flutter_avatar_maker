@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_avatar_maker/binging/root_binging.dart';
+import 'package:avatar_maker/binging/root_binging.dart';
 import 'package:get/get.dart';
 
 import 'pages/home.dart';
@@ -19,17 +19,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorSchemeSeed: Colors.blue,
-        useMaterial3: true,
-      ),
+      theme: ThemeData(colorSchemeSeed: Colors.blue, useMaterial3: true),
       initialBinding: RootBinding(),
-      getPages: [
-        GetPage(
-          name: '/',
-          page: () => const HomePage(),
-        )
-      ],
+      getPages: [GetPage(name: '/', page: () => const HomePage())],
     );
   }
 }

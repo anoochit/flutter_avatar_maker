@@ -2,9 +2,9 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_avatar_maker/const.dart';
-import 'package:gallery_saver/gallery_saver.dart';
+import 'package:avatar_maker/const.dart';
 import 'package:get/get.dart';
+import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
@@ -198,21 +198,19 @@ class AppController extends GetxController {
     // save and share
     await screenshotController
         .captureFromWidget(
-            const AvatarImageWidget(
-              width: 1200,
-              heigth: 1200,
-            ),
-            targetSize: const Size(1200, 1200),
-            pixelRatio: 1.0,
-            delay: const Duration(milliseconds: 10))
+          const AvatarImageWidget(width: 1200, heigth: 1200),
+          targetSize: const Size(1200, 1200),
+          pixelRatio: 1.0,
+          delay: const Duration(milliseconds: 10),
+        )
         .then((image) async {
-      final directory = await getApplicationDocumentsDirectory();
-      final imagePath = await File('${directory.path}/image.png').create();
-      await imagePath.writeAsBytes(image);
+          final directory = await getApplicationDocumentsDirectory();
+          final imagePath = await File('${directory.path}/image.png').create();
+          await imagePath.writeAsBytes(image);
 
-      /// Share Plugin
-      await Share.shareXFiles([XFile(imagePath.path)]);
-    });
+          /// Share Plugin
+          await Share.shareXFiles([XFile(imagePath.path)]);
+        });
   }
 
   saveAvatarImage() async {
@@ -220,31 +218,26 @@ class AppController extends GetxController {
     // save
     await screenshotController
         .captureFromWidget(
-            const AvatarImageWidget(
-              width: 1200,
-              heigth: 1200,
-            ),
-            targetSize: const Size(1200, 1200),
-            pixelRatio: 1.0,
-            delay: const Duration(milliseconds: 10))
+          const AvatarImageWidget(width: 1200, heigth: 1200),
+          targetSize: const Size(1200, 1200),
+          pixelRatio: 1.0,
+          delay: const Duration(milliseconds: 10),
+        )
         .then((image) async {
-      final directory = await getApplicationDocumentsDirectory();
-      final filename = DateTime.now().microsecondsSinceEpoch.toString();
-      final imagePath = await File('${directory.path}/$filename.png').create();
-      await imagePath.writeAsBytes(image);
+          final directory = await getApplicationDocumentsDirectory();
+          final filename = DateTime.now().microsecondsSinceEpoch.toString();
+          final imagePath =
+              await File('${directory.path}/$filename.png').create();
+          await imagePath.writeAsBytes(image);
 
-      // save to gallery
-      await GallerySaver.saveImage(imagePath.path).then(
-        (value) {
+          // save to gallery
+          await ImageGallerySaverPlus.saveImage(image, name: filename);
+
           Get.snackbar(
             'Info',
             'Save image to gallery complete!',
-            duration: const Duration(
-              seconds: 1,
-            ),
+            duration: const Duration(seconds: 1),
           );
-        },
-      );
-    });
+        });
   }
 }
