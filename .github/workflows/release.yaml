@@ -72,4 +72,4 @@ jobs:
             build/app/outputs/bundle/release/*.aab,
             build/app/outputs/flutter-apk/*.apk
           tag: v1.1.0+${{ github.run_number }}
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
