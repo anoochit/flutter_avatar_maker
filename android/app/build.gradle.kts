@@ -25,42 +25,37 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = "11"
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "net.redlinesoft.avatar_maker"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
-        targetSdk = 37
+        targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
 
-   // keystore information
     signingConfigs {
-        if (keystorePropertiesFile.exists() &&
-            keystoreProperties["keyAlias"] != null &&
-            keystoreProperties["keyPassword"] != null &&
-            keystoreProperties["storePassword"] != null
-        ) {
+        val sFile = keystoreProperties.getProperty("storeFile")
+        val sPassword = keystoreProperties.getProperty("storePassword")
+        val kAlias = keystoreProperties.getProperty("keyAlias")
+        val kPassword = keystoreProperties.getProperty("keyPassword")
+
+        if (sFile != null && sPassword != null && kAlias != null && kPassword != null) {
             create("release") {
-                keyAlias = keystoreProperties["keyAlias"] as String
-                keyPassword = keystoreProperties["keyPassword"] as String
-                //storeFile = keystoreProperties["storeFile"]?.let { file(it) }
-                storeFile = file("key.jks")
-                storePassword = keystoreProperties["storePassword"] as String
+                storeFile = file(sFile)
+                storePassword = sPassword
+                keyAlias = kAlias
+                keyPassword = kPassword
             }
         }
     }
 
     buildTypes {
         release {
-            // Signing with the debug keys for now,
-            // so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            // Use the release signing config if all properties were found, otherwise fall back to debug.
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
         }
     }
 }
